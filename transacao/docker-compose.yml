@@ -17,7 +17,8 @@ services:
       SPRING_DATASOURCE_PASSWORD: zupper
       SPRING_PROFILES_ACTIVE: prod
       KAFKA_BOOTSTRAP_SERVER:  http://kafka:9092
-      KAFKA_GROUP_ID: TransacaoCartao
+      KAFKA_CONSUMER_GROUP_ID:  transacao-microservice
+      KAFKA_AUTO-OFFSET-RESET:  latest
      
     networks:
       - transacao  

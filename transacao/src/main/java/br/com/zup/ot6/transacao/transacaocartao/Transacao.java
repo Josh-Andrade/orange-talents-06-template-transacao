@@ -13,6 +13,8 @@ import javax.validation.constraints.Positive;
 
 import com.sun.istack.NotNull;
 
+import br.com.zup.ot6.transacao.consultartrasacoes.TransacaoResponse;
+
 @Entity
 public class Transacao {
 
@@ -43,5 +45,9 @@ public class Transacao {
 		this.estabelecimento = transacaoRequest.getEstabelecimento().toEntity();
 		this.cartao = transacaoRequest.getCartao().toEntity();
 		this.efetivadaEm = transacaoRequest.getEfetivadaEm();
+	}
+
+	public TransacaoResponse toResponse() {
+		return new TransacaoResponse(valor, estabelecimento.ToResponse(), efetivadaEm);
 	}
 }
